@@ -211,7 +211,7 @@ footer {
 
 .contact-me > .logo-container {
     justify-content: flex-start;
-    gap: 24px;
+    gap: 16px;
 }
 
 .contact-me > .logo-container > a {
