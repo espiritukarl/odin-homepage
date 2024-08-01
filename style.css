@@ -1,6 +1,123 @@
-.red {
-    width: 500px;
-    height: 500px;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    /*COLORS*/
+    --purple-color: #5F0F40;
+    --red-color: #9A031E;
+    --yellow-color: #FB8B24;
+    --orange-color: #E36414;
+    --blue-color: #0F4C5C;
+    --shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /*SIZING*/
+    --header-section: 600px;
+    --header-photo: 400px;
+    --header-about-us-height: 300px;
+    --header-about-us-width: 750px;
+    --project-cards: 40vh;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------HEADER------------*/
+
+header {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: var(--header-section);
+    width: 100%;
+    background: linear-gradient(177deg, var(--purple-color) 74.5%, #ffffff 75%);
+}
+
+header > .photo-container {
+    position: relative;
+    width: var(--header-photo);
+    height: var(--header-photo);
+}
+
+.header-photo {
+    position: relative;
+    width: var(--header-photo);
+    height: var(--header-photo);
+    object-fit: cover;
+}
+
+.header-photo-name {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 3rem;
+    text-shadow: var(--shadow);
+    
+}
+
+.about-us-card {
+    height: var(--header-about-us-height);
+    width: var(--header-about-us-width);
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    background-color: var(--blue-color);
+    color: white;
+    box-shadow: var(--shadow);
+
+    letter-spacing: 0.7px;
+    font-weight: 200;
+}
+
+.name > * {
+    font-family: "Roboto", sans-serif;
+    text-shadow: var(--shadow);
+}
+
+.about-us-card > p {
+    text-shadow: var(--shadow);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+}
+
+.logo-container > a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo-container > a:hover {
+    transform: scale(1.1);
+}
+
+/*------------MAIN------------*/
+
+.project-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: calc(var(--project-cards)/3);
+}
+
+.project-card {
+    height: var(--project-cards);
+    width: var(--project-cards);
     border: 1px solid black;
-    background-color: rebeccapurple;
 }
