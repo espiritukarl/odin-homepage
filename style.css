@@ -139,7 +139,7 @@ main > h2 {
     width: var(--project-cards);
     border: 1px solid var(--orange-color);
     border-radius: var(--project-photo-border-radius);
-    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 
     background-color: var(--blue-color);
     color: white;
