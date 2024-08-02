@@ -10,12 +10,13 @@
     --shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     --deeper-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.4);
     /*SIZING*/
-    --header-section: 65vh;
-    --header-photo: 45vh;
-    --header-about-us-height: 40vh;
-    --header-about-us-width: 75vh;
-    --project-cards: 40vh;
+    --header-section: 35vw;
+    --header-photo: 22vw;
+    --header-about-us-height: 17.5vw;
+    --header-about-us-width: 35vw;
+    --project-cards: 20vw;
     --project-photo-border-radius: 5px;
+    --small-font-size: 0.75vw
 }
 
 * {
@@ -40,7 +41,6 @@ header {
     align-items: center;
     color: white;
     height: var(--header-section);
-    width: 100%;
     background: linear-gradient(177deg, var(--purple-color) 74.5%, #ffffff 75%);
 }
 
@@ -61,7 +61,7 @@ header > .photo-container {
     position: absolute;
     bottom: 8px;
     right: 16px;
-    font-size: 5vh;
+    font-size: 2.5vw;
     text-shadow: var(--shadow);
 }
 
@@ -81,7 +81,7 @@ header > .photo-container {
 
     letter-spacing: 0.7px;
     font-weight: 200;
-    font-size: 1.8vh;
+    font-size: var(--small-font-size);
 }
 
 .name > * {
@@ -100,7 +100,7 @@ header > .photo-container {
 }
 
 .logo-container > a {
-    font-size: 3vh;
+    font-size: 1.25vw;
     color: white;
     text-decoration: none;
 }
@@ -124,7 +124,7 @@ main {
 }
 
 .main-header {
-    font-size: 8vh;
+    font-size: 3vw;
     font-weight: 600;
     color: black;
     text-decoration: none;
@@ -143,7 +143,7 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: calc(var(--project-cards)/3);
+    gap: calc(var(--project-cards)/2);
 }
 
 .project-card {
@@ -179,6 +179,7 @@ main {
 
 .project-description {
     font-weight: 200;
+    font-size: var(--small-font-size);
     padding: 15px;
 }
 
@@ -216,6 +217,7 @@ footer {
     height: var(--header-section);
     background-color: var(--purple-color);
     color: var(--yellow-color);
+    font-size: calc(var(--small-font-size)*1.5);
 
     display: flex;
     justify-content: space-around;
@@ -255,4 +257,122 @@ footer > img {
     width: calc(var(--header-photo)*2);
     height: calc(var(--header-photo)*1.3);
     object-fit: cover;
+}
+
+/*------------MEDIA QUERY------------*/
+
+@media (max-width: 1200px) {
+    :root {
+        --header-section: 50vw;
+        --header-photo: 30vw;
+        --header-about-us-height: 20vw;
+        --header-about-us-width: 45vw;
+        --small-font-size: 0.95vw;
+        --project-cards: 25vw;
+    }
+
+    footer > img {
+        width: calc(var(--header-photo)*1.5);
+        height: calc(var(--header-photo)*1.1);
+    }
+}
+@media (max-width: 1000px) {
+    :root {
+        --header-section: 70vw;
+        --header-photo: 30vw;
+        --header-about-us-height: 40vw;
+        --header-about-us-width: 65vw;
+        --project-cards: 30vw;
+        --small-font-size: 1.5vw;
+    }
+
+    header {
+        flex-direction: column;
+        margin-bottom: 10vh;
+        padding-top:  4vw;
+        gap: 5px;
+    }
+
+    .header-photo-name {
+        right: calc(var(--header-photo)/8);
+        font-size: 4vw;
+    }
+
+    .logo-container > a {
+        font-size: 2vw;
+    }
+
+    .main-header {
+        font-size: 4vw;
+    }
+
+    .project-description {
+        font-size: calc(var(--small-font-size)*1.1);
+    }
+
+    .project-card {
+        height: calc(var(--project-cards)*1.6);
+    }
+
+    .project-header {
+        margin-bottom: 25px;
+    }
+
+    .icon-container > a > * {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        font-size: var(--small-font-size);
+    }
+
+    .contact-me > * > svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .contact-me > .logo-container > a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --header-section: 140vw;
+        --header-photo: 70vw;
+        --header-about-us-height: 70vw;
+        --header-about-us-width: 80vw;
+        --project-cards: 70vw;
+        --small-font-size: 2.5vw;
+    }
+
+    .header-photo-name {
+        right: 16px;
+        font-size: 8vw;
+    }
+
+    .logo-container > a {
+        font-size: 4vw;
+    }
+
+    main {
+        text-align: center;
+    }
+
+    .project-card {
+        height: calc(var(--project-cards)*1.3);
+    }
+
+    .project-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: calc(var(--project-cards)*1.2 - (var(--project-cards)/1.4));
+    }
+
+    footer {
+        flex-direction: column;
+    }
 }
