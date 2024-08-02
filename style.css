@@ -348,6 +348,10 @@ footer > img {
         --small-font-size: 2.5vw;
     }
 
+    header {
+        margin-bottom: 5vh;
+    }
+
     .header-photo-name {
         right: 16px;
         font-size: 8vw;
@@ -359,6 +363,10 @@ footer > img {
 
     main {
         text-align: center;
+    }
+
+    .main-header {
+        font-size: 8vw;
     }
 
     .project-card {
